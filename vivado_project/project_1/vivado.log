@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2017.2.1 (64-bit)
+# SW Build 1957588 on Wed Aug  9 16:32:10 MDT 2017
+# IP Build 1948039 on Wed Aug  9 18:19:28 MDT 2017
+# Start of session at: Tue Nov 27 17:56:58 2018
+# Process ID: 17480
+# Current directory: /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1
+# Command line: vivado
+# Log file: /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1/vivado.log
+# Journal file: /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/xilinx/vivado201702/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:58 ; elapsed = 00:08:15 . Memory (MB): peak = 6099.938 ; gain = 70.727 ; free physical = 495 ; free virtual = 3065
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 27 18:19:30 2018...

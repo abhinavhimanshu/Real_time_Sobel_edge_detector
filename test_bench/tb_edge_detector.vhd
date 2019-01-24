@@ -1,0 +1,198 @@
+--Author    : Clancy Jembia
+--Name of file : tb_edge_detector.vhd
+--Description  : test bench for edge_detector
+-- See readme for instructions
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+use std.env.all;
+use std.textio.all;
+use ieee.std_logic_textio.all;
+
+entity tb_edge_detector is
+  generic (
+    input_file_str  : string := "./test_images/noisy_multiple_inputs/image_5.txt";
+    output_file_str : string := "./test_images/output_multiple/output_multiple_image_5";
+    data_width: integer:= 8;
+    IMAGE_WIDTH: integer:= 256
+          );
+end tb_edge_detector;
+
+architecture tb_arch of tb_edge_detector is 
+-------------------- component declarations-----------------------
+
+  component edge_detector is
+ generic (
+           DATA_WIDTH : integer := 8;
+           IMAGE_WIDTH  : integer := 256;
+           IMAGE_HIEGHT : integer := 256
+           --threshold : integer := 400  
+          );
+    Port ( 
+           clk : in STD_LOGIC;  -- 100 Mhz clock
+           rst : in STD_LOGIC;  -- reset signal ACTIVE HIGH
+           pixel_in : in unsigned(7 downto 0);  -- input pixel from UART
+           in_valid : in std_logic;         -- indicaiton of valid input signal 
+           EOF : in std_logic;          -- indcation of END OF FRAME
+           threshold : in std_logic_vector(10 downto 0);    -- threshold for identifying edges
+           next_in : out std_logic;                 -- output BUSY signal to prodcuer, SIGNAL "1" impies module is BUSY
+           out_valid : out std_logic;               -- Produced pixel by module is valid or NOT, "1" impies valid output
+           pixel_out : out std_logic;               -- OUTPUT value of PRODUCED PIXEL
+           ROM_address : out unsigned(15 downto 0); -- Address for writing to RAM
+           sobel_done : out std_logic;              -- pulse that indicates that computation of image is done
+           state_out : out std_logic_vector(1 downto 0) -- this is just used for indication purposes on LED, represents the stage of controller for Edge_Detector
+           );
+  end component;
+-------------------- signal declarations-----------------------
+  signal clk, rst      : std_logic;
+  signal pixel_in       : unsigned (data_width-1 downto 0);
+  signal pixel_out      : std_logic;
+  signal ROM_address    : unsigned (15 downto 0);
+  signal EOF,next_in,out_valid,in_valid : std_logic;
+
+  file   input_data_file  : text;
+  file   input_ready_file : text;
+  file   output_file      : text;
+  -- time
+  constant T: time  := 20 ns;
+  signal hanged_count: integer;
+  signal res_count: integer;
+  constant threshold : integer :=400;
+  signal state_out : std_logic_vector(1 downto 0);
+  signal sobel_done : std_logic;
+begin
+  DUT: edge_detector 
+ generic map (
+           DATA_WIDTH => 8,
+           IMAGE_WIDTH  => IMAGE_WIDTH,
+           IMAGE_HIEGHT => 256
+           --threshold => 400  
+          )
+    port map(
+      --input ports
+        clk     =>  clk,
+        rst     =>  rst,
+        pixel_in =>  pixel_in,
+        in_valid=>in_valid,
+        EOF=>EOF,
+	threshold=>std_logic_vector(to_unsigned(threshold,11)),
+        next_in=>next_in,
+        out_valid=>out_valid,
+      --output ports	
+        pixel_out => pixel_out,
+        ROM_address=>ROM_address,
+	sobel_done =>sobel_done,              -- pulse that indicates that computation of image is done
+        state_out =>state_out -- this is just used for indication purposes on LED, represents the stage of controller for Edge_Detector
+           );
+
+  -- clock process
+  p_clk: process
+  begin
+    clk <= '0';
+    wait for T/2;
+    clk <= '1';
+    wait for T/2;
+  end process;
+
+  -- counting hang cycles
+  p_hang_cycle: process (clk)
+  begin
+    if (rising_edge(clk)) then
+      if (rst = '1' or res_count = 1) then
+        hanged_count <= 0;
+      else 
+        hanged_count <= hanged_count + 1;
+      end if;
+    end if;
+  end process;
+
+  -- SIMULATION STARTS
+  
+  p_read_data: process
+    variable input_data_line  : line;
+    -- variable term_in_valid    : std_logic;
+    variable term_pixel_in    : std_logic_vector (7 downto 0);
+    variable char_comma       : character;
+    variable term_in_valid    : std_logic;
+    variable term_EOF         : std_logic;
+    variable output_line      : line;
+  begin
+
+    -- open files 
+    file_open(input_data_file, input_file_str, read_mode);
+    file_open(output_file, output_file_str, write_mode);
+
+    -- reset
+    rst <= '1';
+    wait until rising_edge(clk);
+    rst <= '1';
+    wait until rising_edge(clk);
+    rst <= '1';
+    wait until rising_edge(clk);
+    rst <= '0';
+
+    -- read first line: coefs, and discard file header
+    readline(input_data_file, input_data_line);
+    --readline(input_data_file, input_data_line);
+    res_count <= 1; -- stop hang from counting during loop
+    -- loop
+    while not endfile(input_data_file) loop
+      -- read from input 
+      readline(input_data_file, input_data_line);
+      read(input_data_line, term_pixel_in);
+      read(input_data_line, char_comma);
+      read(input_data_line, term_in_valid);
+      read(input_data_line, char_comma);
+      read(input_data_line, term_EOF);
+      pixel_in <= unsigned(term_pixel_in);
+      in_valid <= std_logic(term_in_valid);
+      EOF <= std_logic(term_EOF);
+      while (next_in/='0') loop
+          wait until rising_edge(clk);
+      end loop;
+       pixel_in <= unsigned(term_pixel_in);
+       in_valid <= std_logic(term_in_valid);
+       EOF <= std_logic(term_EOF);
+      wait until rising_edge(clk); 
+    end loop;
+    -- now that loop is finished, start hanged count and set all inputs to 0
+    --pixel_in <= (others=>'0');
+    in_valid<='0';
+    EOF<='0';
+    res_count <= 0;
+    wait;
+  end process;
+
+  -- sampling the output
+  p_sample: process (clk)
+    variable output_line       : line;
+  begin 
+    if (rising_edge(clk)) then
+      if (rst = '0') then
+        -- sample and write to output file
+        if(out_valid='1') then
+          write(output_line, pixel_out, left, 1);
+          write(output_line,',',left,1);
+          write(output_line,ROM_address,left,16);
+          writeline(output_file, output_line);
+        end if;
+      end if; 
+    end if; 
+  end process;
+
+  -- end simulation
+  p_endsim: process (clk) 
+  begin
+    if (rising_edge(clk)) then 
+      if (hanged_count >= IMAGE_WIDTH+10) then 
+        file_close(input_data_file);
+        file_close(output_file);
+        report "Test completed";
+        stop(0);
+      end if; 
+    end if;
+  end process;
+
+end tb_arch;

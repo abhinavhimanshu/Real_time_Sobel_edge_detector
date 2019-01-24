@@ -1,0 +1,27 @@
+I) Directory Matlab_software contains following(comparison of different edge detection alorithms)
+		--user should tune threshold in each script when testing against different images
+		i)  prewitt.m  (Our software implementation for Prewitt filter for edges detection without localisation)
+		ii) sobel_edge.m (Our software implementation for Sobel filter for edge detection without localisation)
+		iii)sobel_local.m (Our implementation for Sobel edge detection with localisation of edges)
+		iv) Prewitt_local.m (our implementation for Prewitt filter for edge detection with localisation of images)
+		v)  log.m (our implementation of edge detection using laplacian of gaussian filter with zero crossing points)
+		vi) inbuilt direcotry
+		   codes for comparing our scripts with matlab inbuilt functions
+
+II) Directory sobel_like_HW, contains HW-like implementation for edge detection
+		i) HW_SOBEL.m (This Matlab script is designed to work exactly like our hardware archuitecure, The script is slow because is designed to work like our HW architecture.)
+		ii) outputref.txt (This output reference vector is generated from above script and will be used to verify our design. All values represent pixel intensity of edge image in store in raster fashion, intensity values are either 0 or 255. We understand they can be stored as 0 or 1 instead, we will make that modification later after verifying our implementation, It will require very minimal change in architecture like constant input to Mux will change from 255 to 1, threshold value will be reduced and out RAM size will decrease but flow of the architecture remains the same.)
+
+III) Directory Block_RAM, contains scripts and VHDL and IP files for ROM with memory intialization at runtime
+		i) Script_for_mif_gen.m is used for creating memory intialization file .mif (INPUT TEST VECTOR) file for intializing the block memory
+		ii) Script_for_coe_gen.m is used for creating .coe which is also used for intializing the block ROM (We will us any of these two methods to intialize the block ROM)			
+		iii) ROM_IN_VHDL (This directory contains VHDL code for block ROM module that will also intilialized the ROM from .mif file)
+		iv) ROM_USING_IP (This directory contains synthesis of VIVADO IP "block memory generator" we are using .coe file to intialize the block memory)
+
+IV) VGA_Controller 
+		This folder contains the VHDL code and vivado synthesis results for VGA TIMING module, the current implementation is timed to work for 640x480 screen display. For smaller size images we will feed black pixels for remaining section.
+
+V) Images_results 
+		This folder contains images that we obtaind from different implementation of edge detection of algorithms
+		And also the result that we expect from our HW like implementation of Matlab code "HW_like_software_implemetation" 
+

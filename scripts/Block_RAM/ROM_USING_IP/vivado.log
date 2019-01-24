@@ -1,0 +1,215 @@
+#-----------------------------------------------------------
+# Vivado v2017.2.1 (64-bit)
+# SW Build 1957588 on Wed Aug  9 16:32:10 MDT 2017
+# IP Build 1948039 on Wed Aug  9 18:19:28 MDT 2017
+# Start of session at: Mon Nov  5 17:15:44 2018
+# Process ID: 16570
+# Current directory: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST
+# Command line: vivado
+# Log file: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/vivado.log
+# Journal file: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/vivado.jou
+#-----------------------------------------------------------
+start_gui
+Warning: locale not supported by Xlib, locale set to C
+create_project project_1 /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1 -part xc7a35tcpg236-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/xilinx/vivado201702/Vivado/2017.2/data/ip'.
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 6302.988 ; gain = 18.008 ; free physical = 50463 ; free virtual = 140634
+set_property target_language VHDL [current_project]
+create_bd_design "block_rom"
+Wrote  : </nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/block_rom.bd> 
+create_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 6373.914 ; gain = 50.918 ; free physical = 50373 ; free virtual = 140542
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.3 blk_mem_gen_0
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+create_bd_cell: Time (s): cpu = 00:00:26 ; elapsed = 00:00:52 . Memory (MB): peak = 6570.676 ; gain = 169.750 ; free physical = 50251 ; free virtual = 140369
+endgroup
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+startgroup
+set_property -dict [list CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Write_Width_A {8} CONFIG.Write_Depth_A {65536} CONFIG.Load_Init_File {true} CONFIG.Coe_File {/nethome/ahimanshu3/DSP_Project/Block_RAM/camera.coe} CONFIG.Fill_Remaining_Memory_Locations {true} CONFIG.use_bram_block {Stand_Alone} CONFIG.Enable_32bit_Address {false} CONFIG.Use_Byte_Write_Enable {false} CONFIG.Byte_Size {9} CONFIG.Read_Width_A {8} CONFIG.Write_Width_B {8} CONFIG.Read_Width_B {8} CONFIG.Register_PortA_Output_of_Memory_Primitives {true} CONFIG.Use_RSTA_Pin {false} CONFIG.Port_A_Write_Rate {0}] [get_bd_cells blk_mem_gen_0]
+INFO: [IP_Flow 19-3484] Absolute path of file '/nethome/ahimanshu3/DSP_Project/Block_RAM/camera.coe' provided. It will be converted relative to IP Instance files '../../../../../../../../camera.coe'
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins blk_mem_gen_0/addra]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/addra is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTA
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_cells blk_mem_gen_0]
+make_bd_intf_pins_external  [get_bd_cells blk_mem_gen_0]
+endgroup
+delete_bd_objs [get_bd_intf_nets BRAM_PORTA_1]
+delete_bd_objs [get_bd_intf_ports BRAM_PORTA]
+startgroup
+make_bd_pins_external  [get_bd_pins blk_mem_gen_0/clka]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/clka is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTA
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins blk_mem_gen_0/douta]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/douta is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTA
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins blk_mem_gen_0/ena]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/ena is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTA
+endgroup
+validate_bd_design
+make_wrapper -files [get_files /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/block_rom.bd] -top
+INFO: [BD 41-1662] The design 'block_rom.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : </nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/block_rom.bd> 
+VHDL Output written to : /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom.vhd
+VHDL Output written to : /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom_wrapper.vhd
+add_files -norecurse /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom_wrapper.vhd
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 2
+INFO: [BD 41-1662] The design 'block_rom.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom.vhd
+VHDL Output written to : /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+Exporting to file /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hw_handoff/block_rom.hwh
+Generated Block Design Tcl file /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hw_handoff/block_rom_bd.tcl
+Generated Hardware Definition File /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom.hwdef
+[Mon Nov  5 17:20:48 2018] Launched block_rom_blk_mem_gen_0_0_synth_1...
+Run output will be captured here: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.runs/block_rom_blk_mem_gen_0_0_synth_1/runme.log
+[Mon Nov  5 17:20:48 2018] Launched synth_1...
+Run output will be captured here: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 6728.230 ; gain = 16.633 ; free physical = 50118 ; free virtual = 140258
+launch_runs impl_1 -jobs 2
+[Mon Nov  5 17:37:15 2018] Launched impl_1...
+Run output will be captured here: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.runs/impl_1/runme.log
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/xilinx/vivado201702/Vivado/2017.2/data/xsim/ip/xsim_ip.ini' copied to run dir:'/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'block_rom_wrapper' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav/camera.coe'
+INFO: [SIM-utils-43] Exported '/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav/block_rom_blk_mem_gen_0_0.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav'
+xvlog -m64 --relax -prj block_rom_wrapper_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.ip_user_files/bd/block_rom/ip/block_rom_blk_mem_gen_0_0/sim/block_rom_blk_mem_gen_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module block_rom_blk_mem_gen_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl -m64 --relax -prj block_rom_wrapper_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.ip_user_files/bd/block_rom/hdl/block_rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity block_rom
+INFO: [VRFC 10-163] Analyzing VHDL file "/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity block_rom_wrapper
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /tools/xilinx/vivado201702/Vivado/2017.2/bin/unwrapped/lnx64.o/xelab -wto 5537fd4b78b44193b83584da7a44d5cb --debug typical --relax --mt 8 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot block_rom_wrapper_behav xil_defaultlib.block_rom_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2017.sub/2017.2.1/nightly/2017_08_09_1957588/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.sub/2017.2.1/nightly/2017_08_09_1957588/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package unisim.vcomponents
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.block_rom_blk_mem_gen_0_0
+Compiling architecture structure of entity xil_defaultlib.block_rom [block_rom_default]
+Compiling architecture structure of entity xil_defaultlib.block_rom_wrapper
+Built simulation snapshot block_rom_wrapper_behav
+
+****** Webtalk v2017.2.1 (64-bit)
+  **** SW Build 1957588 on Wed Aug  9 16:32:10 MDT 2017
+  **** IP Build 1948039 on Wed Aug  9 18:19:28 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav/xsim.dir/block_rom_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav/xsim.dir/block_rom_wrapper_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Nov  5 18:18:24 2018. For additional details about this file, please refer to the WebTalk help file at /tools/xilinx/vivado201702/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Nov  5 18:18:24 2018...
+run_program: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 6743.406 ; gain = 0.000 ; free physical = 49267 ; free virtual = 139774
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "block_rom_wrapper_behav -key {Behavioral:sim_1:Functional:block_rom_wrapper} -tclbatch {block_rom_wrapper.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source block_rom_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module block_rom_wrapper.block_rom_i.blk_mem_gen_0.inst.native_mem_module.blk_mem_gen_v8_3_6_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'block_rom_wrapper_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:27 ; elapsed = 00:00:15 . Memory (MB): peak = 6808.898 ; gain = 65.492 ; free physical = 49220 ; free virtual = 139732
+add_force {/block_rom_wrapper/clka} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/block_rom_wrapper/ena} -radix hex {1 0ns}
+add_force {/block_rom_wrapper/addra} -radix hex {0 0ns}
+run 1000 ns
+add_force {/block_rom_wrapper/addra} -radix hex {1 0ns}
+add_force {/block_rom_wrapper/addra} -radix unsigned {1 0ns}
+run all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+WARNING: [Simulator 45-29] Cannot open source file /wrk/2017.sub/2017.2.1/nightly/2017_08_09_1957588/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v: file does not exist.
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 6841.562 ; gain = 9.004 ; free physical = 49206 ; free virtual = 139768
+INFO: [Common 17-344] 'run' was cancelled
+add_force {/block_rom_wrapper/addra} -radix unsigned {3 0ns}
+run 1000 ns
+run 1000 ns
+add_force {/block_rom_wrapper/addra} -radix hex {4 0ns}
+run 1000 ns
+add_force {/block_rom_wrapper/addra} -radix unsigned {65536 0ns}
+ERROR: [Simtcl 6-179] Couldn't add force for the following reason: Illegal value '65536': The decimal value '65536' is bigger than the object size of 16 bits.
+add_force {/block_rom_wrapper/addra} -radix unsigned {65535 0ns}
+run 1000 ns
+open_bd_design {/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/block_rom.bd}
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+startgroup
+set_property -dict [list CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Algorithm {Fixed_Primitives} CONFIG.Primitive {8kx2} CONFIG.Enable_A {Use_ENA_Pin} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Enable_B {Always_Enabled} CONFIG.Register_PortB_Output_of_Memory_Primitives {false} CONFIG.Fill_Remaining_Memory_Locations {false} CONFIG.Port_A_Write_Rate {0} CONFIG.Port_B_Clock {0} CONFIG.Port_B_Enable_Rate {0}] [get_bd_cells blk_mem_gen_0]
+endgroup
+make_wrapper -files [get_files /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/block_rom.bd] -top
+Wrote  : </nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/block_rom.bd> 
+VHDL Output written to : /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom.vhd
+VHDL Output written to : /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom_wrapper.vhd
+reset_run block_rom_blk_mem_gen_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+INFO: [BD 41-1662] The design 'block_rom.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom.vhd
+VHDL Output written to : /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+Exporting to file /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hw_handoff/block_rom.hwh
+Generated Block Design Tcl file /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hw_handoff/block_rom_bd.tcl
+Generated Hardware Definition File /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom.hwdef
+[Mon Nov  5 19:04:12 2018] Launched block_rom_blk_mem_gen_0_0_synth_1...
+Run output will be captured here: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.runs/block_rom_blk_mem_gen_0_0_synth_1/runme.log
+[Mon Nov  5 19:04:12 2018] Launched synth_1...
+Run output will be captured here: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 6914.590 ; gain = 8.609 ; free physical = 49244 ; free virtual = 139796
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  5 21:20:22 2018...

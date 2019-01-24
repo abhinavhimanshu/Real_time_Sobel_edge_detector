@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2.1 (64-bit)
+# SW Build 1957588 on Wed Aug  9 16:32:10 MDT 2017
+# IP Build 1948039 on Wed Aug  9 18:19:28 MDT 2017
+# Start of session at: Mon Nov  5 18:18:23 2018
+# Process ID: 93359
+# Current directory: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav
+# Command line: wbtcv -mode batch -source /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav/xsim.dir/block_rom_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav/webtalk.log
+# Journal file: /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav/webtalk.jou
+#-----------------------------------------------------------
+source /nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.sim/sim_1/behav/xsim.dir/block_rom_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace

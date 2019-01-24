@@ -1,0 +1,77 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2.1 (lin64) Build 1957588 Wed Aug  9 16:32:10 MDT 2017
+| Date         : Tue Dec  4 03:02:25 2018
+| Host         : ecelinsrvy.ece.gatech.edu running 64-bit unknown
+| Command      : report_control_sets -verbose -file Our_design_control_sets_placed.rpt
+| Design       : Our_design
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    13 |
+| Unused register locations in slices containing registers |    50 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              15 |            9 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               9 |            6 |
+| Yes          | No                    | No                     |             114 |           57 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             356 |           95 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------+------------------------------+--------------------------+------------------+----------------+
+|          Clock Signal         |         Enable Signal        |     Set/Reset Signal     | Slice Load Count | Bel Load Count |
++-------------------------------+------------------------------+--------------------------+------------------+----------------+
+|  A3/clk_wiz_0/inst/clk_out1   |                              |                          |                1 |              1 |
+|  A3/clk_wiz_0/inst/clk_source |                              | rst_IBUF                 |                6 |              9 |
+|  A3/clk_wiz_0/inst/clk_source | A1/r_Clk_Count[8]_i_1_n_0    |                          |                6 |              9 |
+|  A3/clk_wiz_0/inst/clk_out1   | led_OBUF[0]                  | rst_IBUF                 |                4 |             10 |
+|  A3/clk_wiz_0/inst/clk_out1   | A4/A1/vpos_c[9]_i_1_n_0      | rst_IBUF                 |                6 |             10 |
+|  A3/clk_wiz_0/inst/clk_source |                              |                          |                8 |             14 |
+|  A3/clk_wiz_0/inst/clk_source | A1/r_RX_Byte2                |                          |                5 |             16 |
+|  A3/clk_wiz_0/inst/clk_source | A1/EOF_Count                 | rst_IBUF                 |                6 |             16 |
+|  A3/clk_wiz_0/inst/clk_out1   | A4/A1/temp_count[15]_i_1_n_0 | rst_IBUF                 |                6 |             16 |
+|  A3/clk_wiz_0/inst/clk_source | A2/A1/pixel_reg[7]_0         | rst_IBUF                 |               15 |             33 |
+|  A3/clk_wiz_0/inst/clk_source | A2/A2/row1_s1_0              |                          |               29 |             72 |
+|  A3/clk_wiz_0/inst/clk_source | A2/A1/pixel_reg[7]_0         |                          |               51 |            153 |
+|  A3/clk_wiz_0/inst/clk_source | A2/A1/pixel_reg[7]_0         | A2/A1/row_buffer2[255]_0 |               58 |            271 |
++-------------------------------+------------------------------+--------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     1 |
+| 9      |                     2 |
+| 10     |                     2 |
+| 14     |                     1 |
+| 16+    |                     7 |
++--------+-----------------------+
+
+

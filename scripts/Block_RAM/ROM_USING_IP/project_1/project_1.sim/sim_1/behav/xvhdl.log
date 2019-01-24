@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.ip_user_files/bd/block_rom/hdl/block_rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity block_rom
+INFO: [VRFC 10-163] Analyzing VHDL file "/nethome/ahimanshu3/DSP_Project/Block_RAM/vivado_IP_TEST/project_1/project_1.srcs/sources_1/bd/block_rom/hdl/block_rom_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity block_rom_wrapper

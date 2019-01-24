@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_2" LaunchPart="xc7a35tcpg236-1" LaunchTime="1543910156">
+  <File Type="VDS-TIMING-PB" Name="Our_design_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Our_design_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="Our_design.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="Our_design_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="Our_design_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="Our_design_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="Our_design.vds"/>
+  <File Type="PA-TCL" Name="Our_design.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/clk_25/clk_25.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RAM_dual.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/absolute_sum.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/absolute_sum.vhd"/>
+        <Attr Name="ImportTime" Val="1543252292"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/comp_bin.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/comp_bin.vhd"/>
+        <Attr Name="ImportTime" Val="1543252587"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/edge_detector.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/edge_detector.vhd"/>
+        <Attr Name="ImportTime" Val="1543278385"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/New folder/myreceiver.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/New folder/myreceiver.vhd"/>
+        <Attr Name="ImportTime" Val="1543343034"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/row_shifter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/row_shifter.vhd"/>
+        <Attr Name="ImportTime" Val="1543278085"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/sobel_filter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/sobel_filter.vhd"/>
+        <Attr Name="ImportTime" Val="1543251817"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Vga/top_vga.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Vga/top_vga.vhd"/>
+        <Attr Name="ImportTime" Val="1543092106"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Vga/vga_controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Vga/vga_controller.vhd"/>
+        <Attr Name="ImportTime" Val="1542763047"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Vga/vga_test.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Vga/vga_test.vhd"/>
+        <Attr Name="ImportTime" Val="1543091372"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Our_design.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/clk_25/hdl/clk_25_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="Our_design"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Flow_AlternateRoutability" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design">
+      <Option Id="Directive">3</Option>
+      <Option Id="NoCombineLuts">1</Option>
+      <Option Id="ShregMinSize">10</Option>
+      <Option Id="ResourceSharing">2</Option>
+    </Step>
+  </Strategy>
+</GenRun>

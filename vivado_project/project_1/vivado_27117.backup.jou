@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2017.2.1 (64-bit)
+# SW Build 1957588 on Wed Aug  9 16:32:10 MDT 2017
+# IP Build 1948039 on Wed Aug  9 18:19:28 MDT 2017
+# Start of session at: Tue Nov 27 11:13:14 2018
+# Process ID: 27117
+# Current directory: /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1
+# Command line: vivado
+# Log file: /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1/vivado.log
+# Journal file: /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes {/nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/sobel_filter.vhd /nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/absolute_sum.vhd /nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/edge_detector.vhd /nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/comp_bin.vhd /nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/row_shifter.vhd}
+import_files -norecurse {/nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/sobel_filter.vhd /nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/absolute_sum.vhd /nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/edge_detector.vhd /nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/comp_bin.vhd /nethome/ahimanshu3/DSP_Project/S/Sobel_edge_detector/src/row_shifter.vhd}
+update_compile_order -fileset sources_1
+close [ open /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1/project_1.srcs/sources_1/new/Our_design.vhd w ]
+add_files /nethome/ahimanshu3/DSP_Project/team_10_codes_CDR/Vga_projrct/project_1/project_1.srcs/sources_1/new/Our_design.vhd
+update_compile_order -fileset sources_1

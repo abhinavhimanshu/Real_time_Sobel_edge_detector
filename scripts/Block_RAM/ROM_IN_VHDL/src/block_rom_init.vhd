@@ -1,0 +1,60 @@
+-- author : Clancy jembia
+-- filename : block_rom_init.vhd
+-- Description : This module is used to intialize the rom
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use std.textio.all;
+
+
+entity block_rom is
+ 	generic(
+
+ 			Addr_width : integer := 16;  
+ 			Data_width : integer :=	8
+ 	);
+ 	port(
+ 		-- input ports
+ 		clk : in std_logic;
+ 		--rst : in std_logic;
+ 		enable : in std_logic;
+ 		addr : in std_logic_vector(Addr_width-1 downto 0);
+ 		-- output ports
+ 		data_out : out unsigned(Data_width-1 downto 0)
+ 	);
+end block_rom;
+
+architecture arch of block_rom is
+constant Depth : integer := 2**Addr_width;
+type blk_mem_type is array (0 to Depth-1) of unsigned(Data_width-1 downto 0);
+
+impure function mem_init( filename : in string )
+	return blk_mem_type is
+		file file_hnd : text open read_mode is filename;
+		variable row : line;
+		variable value : bit_vector(Data_width-1 downto 0);
+		variable mem : blk_mem_type;
+	begin
+	   -- file_open(file_hnd,filename,read_mode);
+		for i in mem'range loop
+			readline(file_hnd, row);
+			read(row, value);
+			mem(i) := unsigned(to_stdlogicvector(value));
+		end loop;
+		--file_close(file_hnd);
+		return mem;
+end function;
+
+constant memory : blk_mem_type := mem_init("cameraman.mif");
+begin
+		process(clk)
+		begin
+			if(rising_edge(clk)) then
+				if(enable = '1' ) then
+						data_out <= (others=>'0');
+				else
+						data_out <= memory(to_integer(unsigned(addr)));	
+				end if;
+			end if;
+		end process;
+end arch;

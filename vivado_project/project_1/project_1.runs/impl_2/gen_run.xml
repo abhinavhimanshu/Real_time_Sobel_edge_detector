@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_2" LaunchPart="xc7a35tcpg236-1" LaunchTime="1543910156">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-DRC" Name="Our_design.drc"/>
+  <File Type="BG-BGN" Name="Our_design.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="Our_design.sysdef"/>
+  <File Type="BITSTR-MMI" Name="Our_design.mmi"/>
+  <File Type="BITSTR-BMM" Name="Our_design_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="Our_design.nky"/>
+  <File Type="BITSTR-RBT" Name="Our_design.rbt"/>
+  <File Type="BITSTR-MSK" Name="Our_design.msk"/>
+  <File Type="BG-BIN" Name="Our_design.bin"/>
+  <File Type="BG-BIT" Name="Our_design.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Our_design_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Our_design_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Our_design_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Our_design_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Our_design_postroute_physopt.dcp"/>
+  <File Type="ROUTE-CLK" Name="Our_design_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="Our_design_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="Our_design_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="Our_design_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="Our_design_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="Our_design_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="Our_design_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="Our_design_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="Our_design_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="Our_design_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Our_design_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Our_design_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="Our_design_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="Our_design_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="Our_design_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="Our_design_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="Our_design_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="Our_design_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="Our_design_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="Our_design_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="Our_design_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="Our_design_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="Our_design_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="RDI-RDI" Name="Our_design.vdi"/>
+  <File Type="PLACE-TIMING" Name="Our_design_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="Our_design_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="Our_design_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="Our_design_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="Our_design_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="Our_design_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="Our_design_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="Our_design_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="Our_design_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="Our_design_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="Our_design_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="Our_design_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="Our_design_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="Our_design.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Our_design_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="Our_design_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="Our_design_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="Our_design_timing_summary_init.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Our_design_postplace_pwropt.dcp"/>
+  <File Type="PA-TCL" Name="Our_design.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/clk_25/clk_25.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RAM_dual.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/absolute_sum.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/absolute_sum.vhd"/>
+        <Attr Name="ImportTime" Val="1543252292"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/comp_bin.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/comp_bin.vhd"/>
+        <Attr Name="ImportTime" Val="1543252587"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/edge_detector.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/edge_detector.vhd"/>
+        <Attr Name="ImportTime" Val="1543278385"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/New folder/myreceiver.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/New folder/myreceiver.vhd"/>
+        <Attr Name="ImportTime" Val="1543343034"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/row_shifter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/row_shifter.vhd"/>
+        <Attr Name="ImportTime" Val="1543278085"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/sobel_filter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../S/Sobel_edge_detector/src/sobel_filter.vhd"/>
+        <Attr Name="ImportTime" Val="1543251817"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Vga/top_vga.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Vga/top_vga.vhd"/>
+        <Attr Name="ImportTime" Val="1543092106"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Vga/vga_controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Vga/vga_controller.vhd"/>
+        <Attr Name="ImportTime" Val="1542763047"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Vga/vga_test.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Vga/vga_test.vhd"/>
+        <Attr Name="ImportTime" Val="1543091372"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Our_design.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/clk_25/hdl/clk_25_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="Our_design"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

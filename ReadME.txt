@@ -1,0 +1,8 @@
+-constraint folder contains the constraint file
+-Implementation Reports system level contains the system level implementaion report
+-src codes contains all the source code of this projects,heriarchy of code is described in image code_heriarchy
+-test_bench contains the testbench and input test vector and refrences, It also has readme file explaining the details on how to use
+-UART_SEND_CODE contains the code used to send image to FPGA using UART
+-vivado_project contains system level vivado synthesis and implementaiton of project
+-scripts folder contains all the scripts and has readme inside explaining everything in more details.
+-Result folder contains resulting images obtained from our HW architecture
